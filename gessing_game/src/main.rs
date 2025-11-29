@@ -11,9 +11,9 @@ fn main() {
         io::stdin()
             .read_line(&mut gesses)
             .expect("cant read your input");
-        let gesses: u32 =gesses.trim().parse().{
+        let gesses: u32 = match gesses.trim().parse(){
             Ok(num) => num,
-            Err(_) => continue;
+            Err(_) => continue
         };
         println!("you gessed : {gesses}");
     
