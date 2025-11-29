@@ -11,7 +11,10 @@ fn main() {
         io::stdin()
             .read_line(&mut gesses)
             .expect("cant read your input");
-        let gesses: u32 =gesses.trim().parse().expect("please type  a number!");
+        let gesses: u32 =gesses.trim().parse().{
+            Ok(num) => num,
+            Err(_) => continue;
+        };
         println!("you gessed : {gesses}");
     
         match gesses.cmp(&secrite){
